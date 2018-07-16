@@ -1,0 +1,20 @@
+<h1>Pick a Color</h1>
+
+<% if @name %>
+<h2>Hello, <%= @name %>!</h2>
+<%end %>
+
+<p>
+    <%= link_to "Red", about_path(color: "red") %>
+
+<p>
+    <%= link_to "Blue", about_path(color: "blue") %>
+</p>
+
+<p>
+    <%= link_to "Green", about_path(color: "green") %>
+</p>
+
+<p>
+    <%= link_to "Yellow", about_path(color: "yellow") %>
+</p>

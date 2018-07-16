@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Posts</h1>
+
+<div class="row">
+  <div class="col-md-8">
+    <% @posts.each do |post| %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= post.title %></h3>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <b>Author: <%= post.author %></b>
+        </div>
+        <div class="col-md-6 text-right">
+          <b><%=post.created_at.in_time_zone("America/New_York").strftime("%B %e, %Y %I:%M %p") %></b>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <p><%= post.blog_entry %></p>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <div class="button btn btn-default">
+            <%= link_to 'Read Full Post', post %>
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="button btn btn-default">
+            <%= link_to 'Edit Post', edit_post_path(post) %>
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="button btn btn-default">
+            <%= link_to 'Delete Post', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+<% end %>
+  </div>
+  <div class="col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-body">
+      <h2>What's Gigealogy?</h2>
+      <p>
+        It's all about connections...<br>Tofu shaman raclette ramps literally unicorn before they sold out fashion axe keffiyeh thundercats vape cronut affogato hammock cloud bread. Vegan fingerstache vinyl intelligentsia tattooed, skateboard before they sold out. Bitters gastropub distillery waistcoat. Art party heirloom cronut, glossier pour-over vape vaporware hella mumblecore adaptogen.
+      </p>
+      <%= image_tag("KathrynMuellerHeadshot.jpg", :alt => "rss feed", :class => "img-border img-responsive") %>
+      <p>
+        VHS sriracha yuccie helvetica letterpress before they sold out tote bag affogato blog salvia echo park. Skateboard marfa poutine messenger bag direct trade, vaporware pork belly celiac. Fashion axe vegan affogato gochujang, man braid meh sartorial woke vape austin. Four dollar toast kinfolk migas edison bulb try-hard selvage disrupt artisan chia hashtag deep v prism banh mi food truck. Tofu vice actually raclette, tilde next level jean shorts crucifix raw denim.
+      </p>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h3>Past Posts</h3>
+        <% @posts.each do |post| %>
+          <ul>
+            <li><%= link_to post.title, post %> | <%=post.created_at.in_time_zone("America/New_York").strftime("%B %e, %Y") %></li>
+          </ul>
+        <% end %>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+

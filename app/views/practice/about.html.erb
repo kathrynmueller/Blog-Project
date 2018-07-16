@@ -1,0 +1,25 @@
+<h1>Practice#about</h1>
+
+<style>
+	
+	#color_me_in {
+		background-color: <%= @color %>;
+		color: white;
+		font-size: 29px;
+		padding: 20px;
+		border-spacing: solid;
+	}
+
+</style>
+
+<div id="color_me_in">
+<p><%= @color.upcase %> BOX ACTIVATED!</p>
+</div>
+
+<%= form_tag index_path, method: :get do %>
+	<%= text_field_tag :name, nil, placeholder: 'Enter your name' %>
+	<%= submit_tag 'Submit' %>
+<% end %>
+
+<%= link_to 'Back', index_path %>
+
