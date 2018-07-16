@@ -12,7 +12,7 @@
     <div class="panel-body">
       <div class="row">
         <div class="col-md-6">
-          <b>Author: <%= post.author %></b>
+          <b>Author: <%= post.user.username %></b>
         </div>
         <div class="col-md-6 text-right">
           <b><%=post.created_at.in_time_zone("America/New_York").strftime("%B %e, %Y %I:%M %p") %></b>

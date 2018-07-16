@@ -11,14 +11,32 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :author %>
-    <%= form.text_field :author %>
-  </div>
 
-  <div class="field">
-    <%= form.label :comment_entry %>
-    <%= form.text_area :comment_entry %>
+<!-- hidden field that submits user id -->
+ <%= form.hidden_field :user_id, value: current_user.id %>
+
+<!-- Don't want to have them fill in author anymore: -->
+<!--   <div class="row">
+    <div class="col-md-2">
+      <div class="form-group text-right">
+        <%= form.label :author %>
+      </div>
+    </div>
+    <div class="col-md-10">
+        <%= form.text_field :author, class: "form-group form-control" %>
+    </div>
+  </div> -->
+
+  <div class="row">
+    <div class="col-md-2">
+      <!-- form-group -->
+      <div class="form-group text-right">
+        <%= form.label :comment_entry %>
+      </div>
+    </div>
+    <div class="col-md-10">
+        <%= form.text_field :comment_entry, class: "form-group form-control" %>
+    </div>
   </div>
 
   <%= form.hidden_field :post_id, value: @post.id %>
