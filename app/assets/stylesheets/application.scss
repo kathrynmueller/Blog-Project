@@ -17,24 +17,33 @@
  @import 'bootstrap-sprockets';
  @import 'bootstrap';
 
-.stretch-page {
- 	min-height: 100vh;
+ body {
+
  }
 
  .container {
  	background-color: lightblue;
  	background-image: image-url('full-bloom.png');
-/* 	min-height: 100vh;*/
+/* 	min-height: max-content;*/
+ 	min-height: 80vh;
  }
 
  .navbar {
  	background-color: lightblue;
  	margin-bottom: 0px;
-
+/* 	position: sticky;
+ 	top: 0;*/
  }
 
  .navbar a:visited {
  	color: black;
+ }
+
+ .navbar-right {
+ 	display: flex !important;
+ 	flex-direction: column-reverse;
+ 	align-items: flex-end;
+ 	padding-top: 10px;
  }
 
 .navbar-brand {
@@ -56,18 +65,46 @@
  	font-size: 20px;
  }
 
+ .profile-photo {
+ 	height: 100px;
+ 	border-style: solid;
+ 	border-width: 1px;
+ 	border-radius: 5px;
+ }
+
+ .post-photo {
+ 	height: auto;
+ 	width: 400px;
+ 	border-style: solid;
+ 	border-width: 2px;
+ 	border-color: black;
+ 	padding: 10px;
+ 	margin-top: 10px;
+ 	margin-bottom: 10px;
+ }
+
  .footer {
  	background-color: lightblue;
  	padding: 20px;
+
  }
 
  .btn-default {
  	background-color: lightblue;
  }
 
+ .button-space {
+ 	margin-top: 30px;
+ }
+
+ .well {
+ 	margin-right: 20px;
+ 	margin-left: 20px;
+ }
 
  .img-border {
  	border-style: solid;
  	border-width: 2px;
  	border-color: black;
  }
+

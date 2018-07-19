@@ -21,7 +21,10 @@
 
       <div class="row">
         <div class="col-md-12">
-          <p><%= post.blog_entry %></p>
+          <p><%= post.blog_entry.first(400) %>
+          <% if post.blog_entry.length > 400%>
+            ...</p>
+          <% end %>
         </div>
 
       </div>
@@ -48,6 +51,9 @@
     </div>
   </div>
 <% end %>
+<div class="row text-center">
+    <%= paginate @posts %>
+</div>
   </div>
   <div class="col-md-4">
     <div class="panel panel-default">
@@ -75,5 +81,6 @@
 
 
   </div>
+  
 </div>
 

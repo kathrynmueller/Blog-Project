@@ -38,6 +38,7 @@
         <%= form.text_field :author, class: "form-group form-control" %>
     </div>
   </div> -->
+ 
 
   <div class="row">
     <div class="col-md-2">
@@ -50,10 +51,20 @@
     </div>
   </div>
 
+   <div class="row">
+    <div class="col-md-2 text-right ">
+      Add an image to the top of your post:<br>
+    </div>
+    <div class="col-md-10">  
+      <%= form.file_field :image %>
+    </div>
+  </div>
+
+
   <div class="row">
     <div class="col-md-2">
       <div class="actions">
-        <%= form.submit class: 'btn btn-default' %>
+        <%= form.submit class: 'btn btn-default button-space' %>
       </div>
   </div>
     <% end %>

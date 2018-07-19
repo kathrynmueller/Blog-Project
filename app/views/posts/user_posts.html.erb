@@ -1,0 +1,25 @@
+<div class="well">
+	<h1>Posts by <%= @user.username %> </h1>
+
+	<% if @user.posts.present? %>
+	        
+	     
+
+			<div class="row">
+
+				<% @posts.each do |post| %>
+					<div class="col-md-4">
+						<div class="well">
+
+							<h3><%= link_to post.title, post_path(id: post.id) %></h3>
+						</div>
+
+					</div>
+				<% end %>
+			</div>
+
+	<% else %>
+		<h3>No posts for this user (yet!).</h3>
+
+	 <% end %>
+</div>
